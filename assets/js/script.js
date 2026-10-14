@@ -115,12 +115,38 @@ const starWarsCharacters = [
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
+const nomi = [];
+
+for (let i = 0; i < starWarsCharacters.length; i++) {
+	nomi.push(starWarsCharacters[i].name)
+};
+
+for (let i = 0; i < nomi.length; i++) {
+	console.log(nomi[i])
+};
 
 /* ESERCIZIO 2 — Solo i femminili
    Array vuoto "personaggiFemminili". Con un for + if (gender === "female"),
    crea un nuovo oggetto { name, hair_color, eye_color } e fai push.
    Stampa.
 */
+const personaggiFemminili = [];
+
+for (let i = 0; i < starWarsCharacters.length; i++) {
+	if (starWarsCharacters[i].gender === "female") {
+		personaggiFemminili.push(
+			{
+			name: starWarsCharacters[i].name,
+			hair_color: starWarsCharacters[i].hair_color,
+			eye_color: starWarsCharacters[i].eye_color,
+		}
+	)
+	}
+}
+console.log(personaggiFemminili);
+
+
+
 
 /* SCRIVI QUI LA TUA RISPOSTA */
 
@@ -131,6 +157,14 @@ const starWarsCharacters = [
 
 /* SCRIVI QUI LA TUA RISPOSTA */
 
+const perColoreOcchi = {
+	blue: [],
+	yellow: [],
+	brown: [],
+	red: [],
+	blue-gray: []
+};
+
 /* ESERCIZIO 4 — Raggruppa per colore degli occhi
    For su starWarsCharacters + switch (character.eye_color).
    In ogni case fai push del personaggio nell'array giusto. Ricorda break.
@@ -138,6 +172,9 @@ const starWarsCharacters = [
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
+
+
+
 
 /* ESERCIZIO 5 — Massa totale dell'equipaggio (while)
    i = 0, massaTotale = 0.
