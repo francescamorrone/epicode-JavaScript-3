@@ -121,9 +121,7 @@ for (let i = 0; i < starWarsCharacters.length; i++) {
 	nomi.push(starWarsCharacters[i].name)
 };
 
-for (let i = 0; i < nomi.length; i++) {
-	console.log(nomi[i])
-};
+console.log(nomi);
 
 /* ESERCIZIO 2 — Solo i femminili
    Array vuoto "personaggiFemminili". Con un for + if (gender === "female"),
@@ -246,6 +244,13 @@ if(massaTotale < 500) {
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
+for (let i = 0; i < starWarsCharacters.length; i++) {
+	if (starWarsCharacters[i].gender === 'n/a') {
+		starWarsCharacters[i].gender = 'robot';
+	}
+}
+
+console.log(starWarsCharacters);
 
 /* ESERCIZIO 8 — Più alto e più basso
    For su starWarsCharacters. Trova il personaggio con altezza maggiore e quello con altezza minore.
@@ -253,7 +258,22 @@ if(massaTotale < 500) {
    Stampa: "Più alto: Darth Vader (202 cm)" e "Più basso: ...".
 */
 
+
 /* SCRIVI QUI LA TUA RISPOSTA */
+let piuAlto = starWarsCharacters[0];
+let piuBasso = starWarsCharacters[0];
+
+for (let i = 0; i < starWarsCharacters.length; i++) {
+	if(Number(starWarsCharacters[i].height > Number(piuAlto.height))) {
+		piuAlto = starWarsCharacters[i];
+	}
+	if (Number(starWarsCharacters[i].height < Number(piuBasso.height))) {
+		piuBasso = starWarsCharacters[i];
+	}
+}
+
+console.log(`Più alto: ${piuAlto.name} (${piuAlto.height} cm)`);
+console.log(`Più basso: ${piuBasso.name} (${piuBasso.height} cm)`);
 
 /* ESERCIZIO 9 — Rimuovi i femminili dai nomi (cicli annidati)
    Sull'array "nomi" dell'esercizio 1: for esterno su nomi, for interno su personaggiFemminili.
@@ -262,6 +282,18 @@ if(massaTotale < 500) {
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
+console.log(`Lunghezza nomi prima: ${nomi.length}`);
+for (let i = 0; i < nomi.length; i++) {
+	for (let j = 0; j <personaggiFemminili.length; j++) {
+		if (nomi [i] === personaggiFemminili[j].name) {
+			nomi.splice(i, 1);
+			i--;
+			break;
+		}
+	}
+}
+console.log(`Lunghezza nomi dopo: ${nomi.length}`);
+console.log(nomi);
 
 /* ESERCIZIO 10 — Personaggio casuale
    indice = Math.floor(Math.random() * starWarsCharacters.length)
@@ -278,3 +310,6 @@ if(massaTotale < 500) {
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
+for(const colore in perColoreOcchi) {
+	console.log(`${perColoreOcchi[colore].length} personaggi`);
+}
