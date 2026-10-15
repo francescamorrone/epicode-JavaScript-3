@@ -303,6 +303,22 @@ console.log(nomi);
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
+const indice = Math.floor(Math.random() * starWarsCharacters.length);
+const scelto = starWarsCharacters[indice];
+console.log(`Personaggio scelto: ${scelto.name}`);
+
+if (scelto.gender === "female") {
+  console.log(`Lei è alta ${scelto.height} cm`);
+} else {
+  console.log(`Lui è alto ${scelto.height} cm`);
+}
+
+if (scelto.hair_color !== "n/a" && scelto.hair_color !== "none") {
+  console.log(`Capelli: ${scelto.hair_color}`);
+} else {
+  console.log("Senza capelli");
+}
+
 
 /* --EXTRA-- ESERCIZIO 11 — Conta per colore di occhi
    For...in sulle chiavi di perColoreOcchi.
@@ -313,3 +329,4 @@ console.log(nomi);
 for(const colore in perColoreOcchi) {
 	console.log(`${perColoreOcchi[colore].length} personaggi`);
 }
+
