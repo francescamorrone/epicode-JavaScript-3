@@ -136,11 +136,11 @@ for (let i = 0; i < starWarsCharacters.length; i++) {
 	if (starWarsCharacters[i].gender === "female") {
 		personaggiFemminili.push(
 			{
-			name: starWarsCharacters[i].name,
-			hair_color: starWarsCharacters[i].hair_color,
-			eye_color: starWarsCharacters[i].eye_color,
-		}
-	)
+				name: starWarsCharacters[i].name,
+				hair_color: starWarsCharacters[i].hair_color,
+				eye_color: starWarsCharacters[i].eye_color,
+			}
+		)
 	}
 }
 console.log(personaggiFemminili);
@@ -162,7 +162,7 @@ const perColoreOcchi = {
 	yellow: [],
 	brown: [],
 	red: [],
-	blue-gray: []
+	'blue-gray': []
 };
 
 /* ESERCIZIO 4 — Raggruppa per colore degli occhi
@@ -172,6 +172,29 @@ const perColoreOcchi = {
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
+
+for (let i = 0; i < starWarsCharacters.length; i++) {
+	switch (starWarsCharacters[i].eye_color) {
+		case "blue":
+			perColoreOcchi.blue.push(starWarsCharacters[i])
+			break
+		case "yellow":
+			perColoreOcchi.yellow.push(starWarsCharacters[i])
+			break
+		case "brown":
+			perColoreOcchi.brown.push(starWarsCharacters[i])
+			break
+		case "red":
+			perColoreOcchi.red.push(starWarsCharacters[i])
+			break
+		case "blue-gray":
+			perColoreOcchi["blue-gray"].push(starWarsCharacters[i])
+			break
+	}
+}
+
+console.log(perColoreOcchi);
+
 
 
 
@@ -183,6 +206,15 @@ const perColoreOcchi = {
 */
 
 /* SCRIVI QUI LA TUA RISPOSTA */
+let i = 0;
+let massaTotale = 0;
+
+while(i < starWarsCharacters.length) {
+	massaTotale += Number(starWarsCharacters[i].mass)
+	i++
+}
+
+console.log(massaTotale);
 
 /* ESERCIZIO 6 — Classifica il carico
    Su massaTotale, switch (true) o if/else if:
@@ -192,6 +224,19 @@ const perColoreOcchi = {
    900 – 1000       → "Carico critico"
    > 1000           → "PERICOLO: sovraccarico"
 */
+
+if(massaTotale < 500) {
+	console.log("Carico leggero");
+} else if(massaTotale >= 500 && massaTotale <700) {
+	console.log("Carico medio");
+} else if(massaTotale >= 700 && massaTotale <900) {
+	console.log("Attenzione: oltre 700");
+} else if(massaTotale >= 900 && massaTotale <1000) {
+	console.log("Carico critico");
+} else if(massaTotale > 1000) {
+	console.log("PERICOLO: sovraccarico");
+}
+
 
 /* SCRIVI QUI LA TUA RISPOSTA */
 
